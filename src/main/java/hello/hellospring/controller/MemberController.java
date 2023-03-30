@@ -33,6 +33,7 @@ public class MemberController {
         return "redirect:/";
     }
 
+    //SELECT * FROM MEMBER
     @GetMapping("/members")
     public String list(Model model){
         List<Member> members = memberService.findMembers();
