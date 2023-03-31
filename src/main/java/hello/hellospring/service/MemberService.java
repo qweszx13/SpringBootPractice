@@ -26,6 +26,9 @@ public class MemberService {
         return member.getId();
     }
 
+    //h2 조인 문
+    //insert into member(name) values('spring')
+
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(member1 -> {
