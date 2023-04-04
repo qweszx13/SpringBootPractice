@@ -1,5 +1,7 @@
 package hello.hellospring;
 
+
+import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.JdbcMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 
 @Configuration
 public class SpringConfig {
@@ -27,8 +30,7 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository(){
-
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
