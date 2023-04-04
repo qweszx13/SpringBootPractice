@@ -1,5 +1,9 @@
 package hello.hellospring.domain;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Member {
 
     // H2 db sql문
@@ -10,8 +14,9 @@ public class Member {
 //                    name varchar(255), // name 생성
 //    primary key(id)
 //    );
-
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)//jpa 제공 sequence 와 같음
     private Long id;
+
     private String name;
 
 
